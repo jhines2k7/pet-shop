@@ -39,10 +39,12 @@ App = {
     }
     
     web3 = new Web3(App.web3Provider);
+
+    return App.initContract();
   },
 
   initContract: function() {
-    $.getJSON("Adoption.json", function(data) {
+    $.getJSON("../Adoption.json", function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var AdoptionArtifact = data;
       App.contracts.Adoption = TruffleContract(AdoptionArtifact);
