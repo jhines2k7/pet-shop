@@ -93,7 +93,7 @@ App = {
 
       var account = accounts[0];
 
-      App.contrats.Adoption.deployed().then(function(instance) {
+      App.contracts.Adoption.deployed().then(function(instance) {
         adoptionInstance = instance;
 
         // Execute adopt as a transaction by sending account
