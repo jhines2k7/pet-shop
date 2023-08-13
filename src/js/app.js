@@ -86,6 +86,10 @@ App = {
     console.log("handleAdopt was called");
     var adoptionInstance;
 
+    event.preventDefault();
+
+    var petId = parseInt($(event.target).data('id'));
+
     web3.eth.getAccounts(function(error, accounts) {
       if(error) {
         console.log(error);
