@@ -55,6 +55,8 @@ App = {
       // Use our contract to retrieve and mark the adopted pets.
       return App.markAdopted();
     });
+
+    return App.bindEvents();
   },
 
   bindEvents: function() {
@@ -62,6 +64,7 @@ App = {
   },
 
   markAdopted: function() {
+    console.log("markAdopted was called");
     var adoptionInstance;
 
     App.contracts.Adoption.deployed().then(function(instance) {
@@ -80,6 +83,7 @@ App = {
   },
 
   handleAdopt: function(event) {
+    console.log("handleAdopt was called");
     var adoptionInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
